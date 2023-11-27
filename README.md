@@ -7,6 +7,12 @@ Deuxième projet collectif : DataViz
     📖 Sommaire
 </summary>
 
+- [DATAVIZ](#dataviz)
+  - [L'équipe](#léquipe)
+  - [Le projet](#le-projet)
+  - [Les technologies utilisées](#les-technologies-utilisées)
+  - [Le code](#le-code)
+
 </details>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
