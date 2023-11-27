@@ -1,5 +1,5 @@
 const randomChange = document.getElementById ('randomChange'), 
-images = ['images/bubble.jpeg', 'images/paint.jpeg', 'images/smoke.jpeg', 'images/waves.jpeg'];
+images = ['images/bgImg/bubble.jpeg', 'images/bgImg/paint.jpeg', 'images/bgImg/smoke.jpeg', 'images/bgImg/waves.jpeg'];
 let imgCount = images.length;
 const number = Math.floor(Math.random() * imgCount);
 

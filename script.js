@@ -1,8 +1,41 @@
+const actualDate = document.getElementById('actualDate');
+
+let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septembre', 'October', 'November', 'December'];
+
+function getDate() {
+    let date = new Date();
+    let weekDay = date.getDay(),
+        day = date.getDate(),
+        month = date.getMonth(),
+        year = date.getFullYear();
+
+    for (let i = 0; i < days.length; i++) {
+        if (i === weekDay) {
+            weekDay = days[i];
+        }
+    }
+
+    for (let i = 0; i < months.length; i++) {
+        if (i === month) {
+            month = months[i];
+        }
+    }
+
+    let newDate = weekDay + " " + day + ' ' + month + ' ' + year;
+
+    return newDate;
+}
+
+actualDate.innerHTML = getDate()
+
 const container = document.querySelector('.container');
 const search = document.querySelector('.search-box button');
 const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
+const nbOfSearch = document.getElementById('nbOfSearch');
+let numberOfSearch = 0;
 
 search.addEventListener('click', () => {
 
@@ -36,35 +69,35 @@ search.addEventListener('click', () => {
 
             switch (json.weather[0].main) {
                 case 'Clear':
-                    image.src = 'images/clear.png';
+                    image.src = 'images/weatherImg/clear.png';
                     break;
 
                 case 'Rain':
-                    image.src = 'images/rain.png';
+                    image.src = 'images/weatherImg/rain.png';
                     break;
 
                 case 'Snow':
-                    image.src = 'images/snow.png';
+                    image.src = 'images/weatherImg/snow.png';
                     break;
 
                 case 'Clouds':
-                    image.src = 'images/cloud.png';
+                    image.src = 'images/weatherImg/cloud.png';
                     break;
 
                 case 'Haze':
-                    image.src = 'images/mist.png';
+                    image.src = 'images/weatherImg/mist.png';
                     break;
 
                 case 'Drizzle':
-                    image.src = 'images/drizzle.png';
+                    image.src = 'images/weatherImg/drizzle.png';
                     break;
 
                 case 'Thunderstorm':
-                    image.src = 'images/thunderstorm.png';
+                    image.src = 'images/weatherImg/thunderstorm.png';
                     break;
 
                 case 'Smoke':
-                    image.src = 'images/smoke.png';
+                    image.src = 'images/weatherImg/smoke.png';
                     break;
 
                 default:
@@ -80,6 +113,23 @@ search.addEventListener('click', () => {
             weatherDetails.style.display = '';
             weatherBox.classList.add('fadeIn');
             weatherDetails.classList.add('fadeIn');
-            container.style.height = '590px';
+            container.style.height = '610px';
+
+            numberOfSearch++;
+            nbOfSearch.innerHTML = `${numberOfSearch} Search${numberOfSearch > 1 ? 'es' : ''}`;
         });
 });
+
+const randomChange = document.getElementById('randomChange'), 
+images = ['images/bgImg/bubble.jpeg', 'images/bgImg/paint.jpeg', 'images/bgImg/smoke.jpeg', 'images/bgImg/waves.jpeg'];
+let imgCount = images.length;
+
+function changeImage() {
+    const number = Math.floor(Math.random() * imgCount);
+    randomChange.style.backgroundImage = 'url('+images[number]+')';
+}
+
+window.onload = function() {
+    changeImage(); // Appeler la fonction une fois au chargement de la page
+    setInterval(changeImage, 10000); // Puis toutes les 10 secondes
+}
