@@ -47,7 +47,7 @@ let numberOfSearch = 0;
 
 search.addEventListener('click', () => {
 
-    const APIKey = '41dfc31aacf90548143d2c690c32c6de';
+    const APIKey = 'API_TOKEN';
     const city = document.querySelector('.search-box input').value;
 
     if (city === '')
