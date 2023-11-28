@@ -28,13 +28,11 @@ function getDate() {
     }
 
     // On initialise la date
-    let newDate = weekDay + ' ' + day + ' ' + month + ' ' + year;
+    let newDate = "It's " + weekDay + ' ' + day + ' ' + month + ' ' + year;
     return newDate;
 }
 
-actualDate.innerHTML = getDate()
-
-// On initailise les variables à parir du DOM
+// On initialise les variables à partir du DOM
 const container = document.querySelector('.container');
 const search = document.querySelector('.search-box button');
 const weatherBox = document.querySelector('.weather-box');
@@ -45,13 +43,12 @@ const nbOfSearch = document.getElementById('nbOfSearch');
 // On initialise le nombre de recherche à 0
 let numberOfSearch = 0;
 
-search.addEventListener('click', () => {
-
-    const APIKey = 'API_TOKEN';
+// Function to handle the search logic
+const handleSearch = () => {
+    const APIKey = '41dfc31aacf90548143d2c690c32c6de';
     const city = document.querySelector('.search-box input').value;
 
-    if (city === '')
-        return;
+    if (city === '') return;
 
     // On fait appel à l'API
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
@@ -67,7 +64,7 @@ search.addEventListener('click', () => {
                 error404.classList.add('fadeIn');
                 return;
             }
-            
+
             error404.style.display = 'none';
             error404.classList.remove('fadeIn');
 
@@ -99,7 +96,18 @@ search.addEventListener('click', () => {
             numberOfSearch++;
             nbOfSearch.innerHTML = `${numberOfSearch} Search${numberOfSearch > 1 ? 'es' : ''}`;
         });
+};
+
+// Event listener for the 'click' event
+search.addEventListener('click', handleSearch);
+
+// Event listener for the 'Enter' key event
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        handleSearch();
+    }
 });
+
 
 // On initialise les variables à partir du DOM
 const randomChange = document.getElementById('randomChange'), 
@@ -118,3 +126,13 @@ window.onload = function() {
     changeImage(); // Appeler la fonction une fois au chargement de la page
     setInterval(changeImage, 20000); // Puis toutes les 20 secondes
 }
+
+let typed = new Typed('.auto-typing', {
+    strings: [getDate()],
+    typeSpeed: 100,
+    backSpeed: 100,
+    loop: true,
+    fadeOut: true,
+    fadeOutClass: 'typed-fade-out',
+    fadeOutDelay: 500
+})
