@@ -28,7 +28,7 @@ function getDate() {
     }
 
     // On initialise la date
-    let newDate = weekDay + " " + day + ' ' + month + ' ' + year;
+    let newDate = weekDay + ' ' + day + ' ' + month + ' ' + year;
     return newDate;
 }
 
@@ -67,7 +67,7 @@ search.addEventListener('click', () => {
                 error404.classList.add('fadeIn');
                 return;
             }
-
+            
             error404.style.display = 'none';
             error404.classList.remove('fadeIn');
 
@@ -78,43 +78,9 @@ search.addEventListener('click', () => {
             const humidity = document.querySelector('.weather-details .humidity span');
             const wind = document.querySelector('.weather-details .wind span');
 
-            // On change l'image en fonction de la météo
-            switch (json.weather[0].main) {
-                case 'Clear':
-                    image.src = 'images/weatherImg/clear.png';
-                    break;
-
-                case 'Rain':
-                    image.src = 'images/weatherImg/rain.png';
-                    break;
-
-                case 'Snow':
-                    image.src = 'images/weatherImg/snow.png';
-                    break;
-
-                case 'Clouds':
-                    image.src = 'images/weatherImg/cloud.png';
-                    break;
-
-                case 'Haze':
-                    image.src = 'images/weatherImg/mist.png';
-                    break;
-
-                case 'Drizzle':
-                    image.src = 'images/weatherImg/drizzle.png';
-                    break;
-
-                case 'Thunderstorm':
-                    image.src = 'images/weatherImg/thunderstorm.png';
-                    break;
-
-                case 'Smoke':
-                    image.src = 'images/weatherImg/smoke.png';
-                    break;
-
-                default:
-                    image.src = '';
-            }
+            // On change l'image en fonction de la météo (passée en lowercase pour correspondre au nom des images)
+            let meteo = json.weather[0].main.toLowerCase();
+            image.src = `images/weatherImg/${meteo}.png`;
 
             // On affiche les données de la météo
             temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
@@ -144,6 +110,7 @@ let imgCount = images.length;
 function changeImage() {
     const number = Math.floor(Math.random() * imgCount);
     randomChange.style.backgroundImage = 'url('+images[number]+')';
+    randomChange.style.transition = 'all 2s ease-in-out';
 }
 
 // On appelle la fonction changeImage() au chargement de la page et toutes les 20 secondes
