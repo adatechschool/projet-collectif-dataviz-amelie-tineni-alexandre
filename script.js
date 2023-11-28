@@ -20,7 +20,6 @@ function getDate() {
         }
     }
 
-    // On ajoute un 0 devant le jour si celui-ci est inférieur à 10
     for (let i = 0; i < months.length; i++) {
         if (i === month) {
             month = months[i];
@@ -98,10 +97,10 @@ const handleSearch = () => {
         });
 };
 
-// Event listener for the 'click' event
+// Event listener lorsqu'on 'click' sur le bouton 'search'
 search.addEventListener('click', handleSearch);
 
-// Event listener for the 'Enter' key event
+// Event listener pour la touche 'Entrer'
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         handleSearch();
@@ -127,6 +126,7 @@ window.onload = function() {
     setInterval(changeImage, 20000); // Puis toutes les 20 secondes
 }
 
+// On ajoute un effet de 'typing' sur la date
 let typed = new Typed('.auto-typing', {
     strings: [getDate()],
     typeSpeed: 100,
