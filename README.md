@@ -27,7 +27,7 @@ Deuxième projet collectif : DataViz
 
 ## Le projet
 
-Notre projet consiste à obtenir la météo d'une ville donnée et d'y représenter la température, l'humidité et la vitesse du vent ainsi qu'une image représentant la météo. Nous avons également ajouté un "timer" qui modifie l'image de fond d'écran tous les 20 secondes.
+Notre projet consiste à obtenir la météo d'une ville donnée et d'y représenter la température, l'humidité et la vitesse du vent ainsi qu'une image représentant la météo. Nous avons également ajouté un "timer" qui modifie l'image de fond d'écran tous les 20 secondes, une horloge et un compteur de recherches.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
