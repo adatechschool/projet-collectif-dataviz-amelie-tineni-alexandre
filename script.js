@@ -1,9 +1,9 @@
 // Author: Tinéni BAEYENS, Amélie MASSON, Alexandre BOBIS
-const actualDate = document.getElementById('actualDate');
 
 // On initialise les variables pour la date
 let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septembre', 'October', 'November', 'December'];
+const actualDate = document.getElementById('actualDate');
 
 // On récupère la date actuelle
 function getDate() {
@@ -141,7 +141,7 @@ clock();
 
 function clock() {
     const date = new Date();
-    const hours = ((date.getHours() + 11) % 12 + 1);
+    const hours = ((date.getHours() + 11) % 12 + 1); // Si l'heure est entre 13h et 23h, on affiche 1h à 11h
     const minutes = date.getMinutes();
     const seconds = date.getSeconds();
     const hour = hours * 30;

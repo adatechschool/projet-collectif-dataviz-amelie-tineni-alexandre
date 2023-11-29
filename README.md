@@ -32,18 +32,22 @@ Notre projet consiste à obtenir la météo d'une ville donnée et d'y représen
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Les technologies utilisées
-
-<img src="/images/logo/VSC.png" alt="VSC" style="height: 100px; width=100px">
-<img src="/images/logo/HTML.png" alt="HTML" style="height: 100px; width=100px">
-<img src="/images/logo/CSS.png" alt="CSS" style="height: 100px; width=100px">
-<img src="/images/logo/JS.png" alt="JS" style="height: 100px; width=100px">
+<div style="text-align: center;">
+  <img src="/images/logo/VSC.png" alt="VSC" style="height: 100px; width=100px">
+  <img src="/images/logo/HTML.png" alt="HTML" style="height: 100px; width=100px">
+  <img src="/images/logo/CSS.png" alt="CSS" style="height: 100px; width=100px">
+  <img src="/images/logo/JS.png" alt="JS" style="height: 100px; width=100px">
+</div>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Le code
 
-![changeImage function](/images/code/changeImage.png)
 ![Weather API](/images/code/weatherAPI.png)
+![changeImage function](/images/code/changeImage.png)
+![Get Date](/images/code/getDate.png)
+![Auto-Typing effect](/images/code/typingEffect.png)
+![Clock](/images/code/clock.png)
 
 **Code commenté**
 
