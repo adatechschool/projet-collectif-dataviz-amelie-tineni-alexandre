@@ -44,7 +44,7 @@ let numberOfSearch = 0;
 
 // Function to handle the search logic
 const handleSearch = () => {
-    const APIKey = '41dfc31aacf90548143d2c690c32c6de';
+    const APIKey = 'API_KEY';
     const city = document.querySelector('.search-box input').value;
 
     if (city === '') return;
@@ -73,7 +73,7 @@ const handleSearch = () => {
             const description = document.querySelector('.weather-box .description');
             const humidity = document.querySelector('.weather-details .humidity span');
             const wind = document.querySelector('.weather-details .wind span');
-
+            
             // On change l'image en fonction de la météo (passée en lowercase pour correspondre au nom des images)
             let meteo = json.weather[0].main.toLowerCase();
             image.src = `images/weatherImg/${meteo}.png`;
