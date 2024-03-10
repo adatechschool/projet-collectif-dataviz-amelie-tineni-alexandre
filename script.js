@@ -1,5 +1,7 @@
 // Author: Tinéni BAEYENS, Amélie MASSON, Alexandre BOBIS
 
+import APIKEY from './.env';
+
 // On initialise les variables pour la date
 let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septembre', 'October', 'November', 'December'];
@@ -44,7 +46,7 @@ let numberOfSearch = 0;
 
 // Function to handle the search logic
 const handleSearch = () => {
-    const APIKey = 'API_KEY';
+    const APIKey = APIKEY;
     const city = document.querySelector('.search-box input').value;
 
     if (city === '') return;
@@ -127,7 +129,7 @@ window.onload = function() {
 }
 
 // On ajoute un effet de 'typing' sur la date
-let typed = new Typed('.auto-typing', {
+let typed = new typed('.auto-typing', {
     strings: [getDate()],
     typeSpeed: 100,
     backSpeed: 100,
